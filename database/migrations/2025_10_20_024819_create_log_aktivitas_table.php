@@ -18,7 +18,7 @@ Schema::create('log_aktivitas', function (Blueprint $table) {
     $table->date('tanggal');
     $table->timestamps();
 
-    $table->foreign('id_admin')->references('id_admin')->on('admins')->onDelete('cascade');
+    $table->foreign('id_admin')->references('id_admin')->on('users')->onDelete('cascade');
 });
 
     }

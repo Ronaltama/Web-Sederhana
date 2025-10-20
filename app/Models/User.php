@@ -17,32 +17,18 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+       protected $primaryKey = 'id_admin';
+    protected $fillable = ['nama', 'email', 'password'];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public function logAktivitas() {
+        return $this->hasMany(LogAktivitas::class, 'id_admin');
+    }
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+    public function reviews() {
+        return $this->hasMany(Review::class, 'id_admin');
+    }
+
+    public function mobils() {
+        return $this->hasMany(Mobil::class, 'id_admin');
     }
 }

@@ -9,8 +9,8 @@ class Mobil extends Model
     protected $primaryKey = 'id_mobil';
     protected $fillable = ['id_admin', 'nama_mobil', 'merek', 'deskripsi', 'foto', 'harga'];
 
-    public function admin() {
-        return $this->belongsTo(Admin::class, 'id_admin');
+    public function user() {
+        return $this->belongsTo(User::class, 'id_admin');
     }
 
     public function spesifikasi() {

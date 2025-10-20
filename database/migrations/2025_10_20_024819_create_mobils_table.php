@@ -21,7 +21,7 @@ Schema::create('mobils', function (Blueprint $table) {
     $table->decimal('harga', 15, 2);
     $table->timestamps();
 
-    $table->foreign('id_admin')->references('id_admin')->on('admins')->onDelete('cascade');
+    $table->foreign('id_admin')->references('id_admin')->on('users')->onDelete('cascade');
 });
 
     }
